@@ -5,13 +5,13 @@ import com.hcg.designpattern.observer.subscribe.IPirate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sakazuki implements INavy {
+public class Colonel implements INavy {
 
     private final List<IPirate> pirateList = new ArrayList<>();
 
     @Override
     public String getName() {
-        return "赤犬";
+        return "上校";
     }
 
     @Override

@@ -5,13 +5,13 @@ import com.hcg.designpattern.observer.subscribe.IPirate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kuzan implements INavy {
+public class General implements INavy {
 
     private final List<IPirate> pirateList = new ArrayList<>();
 
     @Override
     public String getName() {
-        return "青雉";
+        return "大将";
     }
 
     @Override
