@@ -1,9 +1,6 @@
 package com.hcg.designpattern.observer;
 
-import com.hcg.designpattern.observer.impl.Goods;
-import com.hcg.designpattern.observer.impl.Order;
-import com.hcg.designpattern.observer.impl.Payment;
-import com.hcg.designpattern.observer.impl.Stock;
+import com.hcg.designpattern.observer.impl.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,23 +9,26 @@ public class ObserverTest {
     @Test
     public void testOrder() {
         Order order = new Order();
-        Payment payment = new Payment();
-        Stock stock = new Stock();
-        Goods goods = new Goods();
-
-        order.addObserver(payment);
-        payment.addObserver(stock);
-        payment.addObserver(goods);
-
+        PaymentObserver paymentObserver = new PaymentObserver(order);
         Assertions.assertEquals(1, order.getObserverNumber());
-        Assertions.assertEquals(2, payment.getObserverNumber());
+        Assertions.assertNull(order.getSubjectState());
+        Assertions.assertNull(paymentObserver.getObserverState());
 
         order.notifyObserver();
+        Assertions.assertEquals("ORDERED", order.getSubjectState());
+        Assertions.assertEquals("PAID", paymentObserver.getObserverState());
 
-        Assertions.assertEquals("订单已生成", order.getNotifyDesc());
-        Assertions.assertEquals("已完成支付", payment.getUpdateDesc());
-        Assertions.assertEquals("已完成支付，进行库存更新并送货", payment.getNotifyDesc());
-        Assertions.assertEquals("库存已更新", stock.getUpdateDesc());
-        Assertions.assertEquals("商品已发出", goods.getUpdateDesc());
+        PaymentSubject paymentSubject = new PaymentSubject();
+        Stock stock = new Stock(paymentSubject);
+        Goods goods = new Goods(paymentSubject);
+        Assertions.assertEquals(2, paymentSubject.getObserverNumber());
+        Assertions.assertNull(paymentSubject.getSubjectState());
+        Assertions.assertNull(stock.getObserverState());
+        Assertions.assertNull(goods.getObserverState());
+
+        paymentSubject.notifyObserver();
+        Assertions.assertEquals("PAID", paymentSubject.getSubjectState());
+        Assertions.assertEquals("SEND", goods.getObserverState());
+        Assertions.assertEquals("UPDATE", stock.getObserverState());
     }
 }

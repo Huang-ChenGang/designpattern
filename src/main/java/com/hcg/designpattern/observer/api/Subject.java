@@ -2,7 +2,7 @@ package com.hcg.designpattern.observer.api;
 
 public interface Subject {
 
-    String getNotifyDesc();
+    String getSubjectState();
 
     void addObserver(Observer observer);
 

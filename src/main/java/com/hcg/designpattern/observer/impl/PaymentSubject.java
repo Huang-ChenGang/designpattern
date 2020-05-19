@@ -2,24 +2,17 @@ package com.hcg.designpattern.observer.impl;
 
 import com.hcg.designpattern.observer.api.Observer;
 import com.hcg.designpattern.observer.api.Subject;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Payment extends AbstractObserver implements Subject {
+@Data
+public class PaymentSubject implements Subject {
 
     private final List<Observer> observerList = new ArrayList<>();
 
-    @Override
-    public void update() {
-        this.notifyObserver();
-        this.updateDesc = "已完成支付";
-    }
-
-    @Override
-    public String getNotifyDesc() {
-        return "已完成支付，进行库存更新并送货";
-    }
+    private String subjectState;
 
     @Override
     public void addObserver(Observer observer) {
@@ -33,6 +26,7 @@ public class Payment extends AbstractObserver implements Subject {
 
     @Override
     public void notifyObserver() {
+        this.subjectState = "PAID";
         observerList.forEach(Observer::update);
     }
 
