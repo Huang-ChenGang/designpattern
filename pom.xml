@@ -16,6 +16,7 @@
 
     <modules>
         <module>observer</module>
+        <module>strategy</module>
     </modules>
 
     <packaging>pom</packaging>
