@@ -1,4 +1,4 @@
-package com.hcg.designpattern.strategy;
+package com.hcg.designpattern.strategy.normal;
 
 abstract class AbstractStrategy {
 

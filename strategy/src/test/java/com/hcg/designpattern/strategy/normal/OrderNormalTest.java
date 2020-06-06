@@ -1,9 +1,9 @@
-package com.hcg.designpattern.strategy;
+package com.hcg.designpattern.strategy.normal;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class OrderStrategyTest {
+public class OrderNormalTest {
 
     private StrategyContext context;
 

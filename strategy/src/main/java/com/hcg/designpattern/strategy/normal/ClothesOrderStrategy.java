@@ -1,4 +1,4 @@
-package com.hcg.designpattern.strategy;
+package com.hcg.designpattern.strategy.normal;
 
 public class ClothesOrderStrategy extends AbstractStrategy {
     @Override
