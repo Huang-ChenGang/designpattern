@@ -28,3 +28,14 @@ Java可以通过封装、继承、多态把程序的耦合度降低。
 - [依赖倒置原则(也叫依赖倒转原则，基础是里氏代换原则)](/依赖倒置原则.md)
 
 - [里氏代换原则](/里氏代换原则.md)
+
+## 设计模式案例代码
+以下是我整理和编写的设计模式的代码和说明。
+项目采用maven多模块，各个设计模式的代码在每个单独的模块里。
+欢迎分享和指正，如果觉得可以的话，欢迎Star和Fork.谢谢
+
+- [观察者模式](https://github.com/Huang-ChenGang/designpattern/blob/master/observer/observer.md)
+
+- [策略模式](https://github.com/Huang-ChenGang/designpattern/blob/master/strategy/strategy.md)
+
+- [装饰者模式-开放封闭原则提现](https://github.com/Huang-ChenGang/designpattern/blob/master/decorator/decorator.md)
