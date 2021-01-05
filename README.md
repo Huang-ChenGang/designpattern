@@ -38,4 +38,4 @@ Java可以通过封装、继承、多态把程序的耦合度降低。
 
 - [策略模式](https://github.com/Huang-ChenGang/designpattern/blob/master/strategy/strategy.md)
 
-- [装饰者模式-开放封闭原则提现](https://github.com/Huang-ChenGang/designpattern/blob/master/decorator/decorator.md)
+- [装饰者模式-开放封闭原则体现](https://github.com/Huang-ChenGang/designpattern/blob/master/decorator/decorator.md)
