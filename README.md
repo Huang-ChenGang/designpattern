@@ -37,10 +37,12 @@ Java可以通过封装、继承、多态把程序的耦合度降低。
 
 欢迎分享和指正，如果觉得可以的话，欢迎Star和Fork。谢谢
 
-- [观察者模式](https://github.com/Huang-ChenGang/designpattern/blob/master/observer/observer.md)
+- 1. [观察者模式](/observer/observer.md)
 
-- [策略模式](https://github.com/Huang-ChenGang/designpattern/blob/master/strategy/strategy.md)
+- 2. [策略模式](/strategy/strategy.md)
 
-- [装饰者模式-开放封闭原则体现](https://github.com/Huang-ChenGang/designpattern/blob/master/decorator/decorator.md)
+- 3. [装饰者模式-开放封闭原则体现](/decorator/decorator.md)
+
+- 4. [代理模式和装饰者模式](/proxy/proxy.md)
 
 - 更新中...
