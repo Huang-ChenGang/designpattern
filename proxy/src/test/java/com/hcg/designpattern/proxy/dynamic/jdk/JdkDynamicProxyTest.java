@@ -15,7 +15,11 @@ public class JdkDynamicProxyTest {
         StaffInterface generalProxy = StaffFactory.getGeneralStaff(staff);
         assertEquals("Jason", generalProxy.getName());
         generalProxy.setName("Jr Jason");
+
         assertEquals("Jr Jason", generalProxy.getName());
+        assertEquals(BigDecimal.ONE, generalProxy.getSalary());
+        assertEquals("Jr Jason", staff.getName());
+        assertEquals(BigDecimal.ONE, staff.getSalary());
     }
 
     @Test(expected = UndeclaredThrowableException.class)
@@ -24,7 +28,6 @@ public class JdkDynamicProxyTest {
         StaffInterface generalProxy = StaffFactory.getGeneralStaff(staff);
         assertEquals(BigDecimal.ONE, generalProxy.getSalary());
         generalProxy.setSalary(BigDecimal.TEN);
-        assertEquals(BigDecimal.ONE, generalProxy.getSalary());
     }
 
     @Test(expected = UndeclaredThrowableException.class)
@@ -33,7 +36,6 @@ public class JdkDynamicProxyTest {
         StaffInterface managerProxy = StaffFactory.getManagerStaff(staff);
         assertEquals("Jason", managerProxy.getName());
         managerProxy.setName("Jr Jason");
-        assertEquals("Jr Jason", managerProxy.getName());
     }
 
     @Test
@@ -42,6 +44,10 @@ public class JdkDynamicProxyTest {
         StaffInterface managerProxy = StaffFactory.getManagerStaff(staff);
         assertEquals(BigDecimal.ONE, managerProxy.getSalary());
         managerProxy.setSalary(BigDecimal.TEN);
+
+        assertEquals("Jason", managerProxy.getName());
         assertEquals(BigDecimal.TEN, managerProxy.getSalary());
+        assertEquals("Jason", staff.getName());
+        assertEquals(BigDecimal.TEN, staff.getSalary());
     }
 }
