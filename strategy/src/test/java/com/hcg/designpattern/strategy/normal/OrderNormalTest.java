@@ -1,33 +1,35 @@
 package com.hcg.designpattern.strategy.normal;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderNormalTest {
 
-    private StrategyContext context;
+    private StrategyFactory factory;
 
-    @Test
-    public void testClothesOrder() {
-        context = new StrategyContext("clothes");
-        Assertions.assertEquals("衣物订单下单成功", context.book());
+    @BeforeEach
+    void setUp() {
+        factory = new StrategyFactory();
     }
 
     @Test
-    public void testFoodOrder() {
-        context = new StrategyContext("food");
-        Assertions.assertEquals("食品订单下单成功", context.book());
+    void testClothesOrder() {
+        Assertions.assertEquals("衣物订单下单成功", factory.getStrategy("clothes").book());
     }
 
     @Test
-    public void testResidenceOrder() {
-        context = new StrategyContext("residence");
-        Assertions.assertEquals("家居订单下单成功", context.book());
+    void testFoodOrder() {
+        Assertions.assertEquals("食品订单下单成功", factory.getStrategy("food").book());
     }
 
     @Test
-    public void testTravelOrder() {
-        context = new StrategyContext("travel");
-        Assertions.assertEquals("出行订单下单成功", context.book());
+    void testResidenceOrder() {
+        Assertions.assertEquals("家居订单下单成功", factory.getStrategy("residence").book());
+    }
+
+    @Test
+    void testTravelOrder() {
+        Assertions.assertEquals("出行订单下单成功", factory.getStrategy("travel").book());
     }
 }
