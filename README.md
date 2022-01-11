@@ -43,8 +43,10 @@ Java可以通过封装、继承、多态把程序的耦合度降低。
 
 3. [装饰者模式-开放封闭原则体现](/decorator/decorator.md)
 
-4. [代理模式](/proxy/proxy.md)
+4.1. [代理模式](/proxy/proxy.md)
 
-4. [代理模式和装饰者模式](/proxy/proxy&decorator.md)
+4.2. [代理模式和装饰者模式](/proxy/proxy&decorator.md)
+
+5. [工厂模式](/factory/factory.md)
 
 - 更新中...
