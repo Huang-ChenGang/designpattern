@@ -20,6 +20,7 @@
         <module>decorator</module>
         <module>proxy</module>
         <module>factory</module>
+        <module>templateMethod</module>
     </modules>
 
     <packaging>pom</packaging>
